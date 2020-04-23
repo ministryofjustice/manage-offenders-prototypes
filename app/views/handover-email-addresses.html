@@ -1,0 +1,137 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "index"
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      Offenders without handover email addresses
+    </h1>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-visually-hidden">Offenders without handover e-mail addresses</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Reason</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" style="width: 10%">Allocated</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" style="width: 10%">Unallocated</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" style="width: 10%">All</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Recently arrived
+            <p class="govuk-body govuk-!-margin-bottom-0">
+              The nDelius import hasn't run against this offender yet.
+            </p>
+          </th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">X,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Y,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Z,000</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            No nDelius record found
+            <p class="govuk-body govuk-!-margin-bottom-0">
+              We can't find any information for this offender in nDelius.
+            </div>
+          </th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">X,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Y,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Z,000</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            NOMIS and nDelius have different dates of birth
+            <p class="govuk-body govuk-!-margin-bottom-0">
+              We found an nDelius record for this offender, but it has a different date of birth, so we're not sure it's the right one.
+            </div>
+          </th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">X,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Y,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Z,000</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Multiple possible nDelius records found
+            <p class="govuk-body govuk-!-margin-bottom-0">
+              We found more than one nDelius record for this offender, so we don't know which is correct.
+            </div>
+          </th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">X,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Y,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Z,000</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            No probation team found for this offender
+            <p class="govuk-body govuk-!-margin-bottom-0">
+              This offender doesn't belong to any team.
+            </div>
+          </th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">X,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Y,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Z,000</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            No team information found for this offender
+            <p class="govuk-body govuk-!-margin-bottom-0">
+              This offender belongs to a team, but we don't have any information about it.
+            </div>
+          </th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">X,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Y,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Z,000</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            No local divisional unit (LDU) found for this offender
+            <p class="govuk-body govuk-!-margin-bottom-0">
+              This offender belongs to a team, but that team doesn't belong to an LDU.
+            </div>
+          </th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">X,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Y,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Z,000</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            No email address on this offender's local division unit (LDU)
+            <p class="govuk-body govuk-!-margin-bottom-0">
+              This offender belongs to an LDU, but that LDU has no email address recorded.
+            </div>
+          </th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">X,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Y,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Z,000</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Total
+          </th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">X,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Y,000</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">Z,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
